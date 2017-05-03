@@ -17,9 +17,9 @@ class SportsTableSeeder extends Seeder
             'Field Hockey', 'Football', 'Golf', 'Gymnastics', 'Ice Hockey',
             'Lacrosse', 'Rowing', 'Soccer', 'Swimming', 'Tennis', 'Volleyball'];
 
-        foreach($sports as $sport) {
+        foreach($sports as $category) {
             $sport = new Sport();
-            $sport->categories = $sport;
+            $sport->categories = $category;
             $sport->save();
         }
     }
