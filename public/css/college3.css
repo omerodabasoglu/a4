@@ -1,0 +1,48 @@
+td {
+    padding: 5px;
+}
+#table {
+    background-color: yellow;
+}
+
+input:submit {
+    margin-left: 40%;
+    width: 200px;
+}
+
+h4, p {
+    text-align: center;
+    padding-top: 25px;
+}
+#homepage {
+    width: 50%;
+    margin: auto;
+    font-size: 1.1em;
+    text-align: justify;
+    margin-top: 10px;
+}
+
+form {
+    width: 50%;
+    margin: auto;
+}
+
+header {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 5%;
+    
+}
+
+
+
+footer {
+    margin: auto;
+    height:30px;
+    width:100%;
+    background-color:#eee;
+    text-align:center;
+    padding:5px;
+    color: black;
+}
+/* End Sticky Footer */

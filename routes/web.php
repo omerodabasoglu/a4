@@ -1,16 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 /**
 * Log viewer
 * (only accessible locally)
@@ -19,18 +8,30 @@ if(config('app.env') == 'local') {
     Route::get('/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 }
 
-/**
-* Main homepage visitors see when they visit just /
-*/
-Route::get('/', 'WelcomeController');
 
-Route::get('/profiler', 'FormController@index');
+# Main homepage
 
-Route::get('/view', 'ProfileController@entries');
+Route::get('/', 'FormController@index');
 
+# Get route to show a form to create a add a new institution
+Route::get('/sports', 'FormController@addNewInstitution');
 
+# Post route to process the form to add a new institution
+Route::post('/sports', 'FormController@storeNewInstitution');
 
+# Get route to show a form to edit an existing institution
+Route::get('/edit/{id}', 'FormController@edit');
 
+# Post route to process the form to save edits to a institution
+Route::post('/edit', 'FormController@saveEdits');
+
+# Get route to confirm deletion of book
+Route::get('/delete/{id}', 'FormController@confirmDeletion');
+
+# Post route to actually delete the book
+Route::post('/delete', 'FormController@delete');
+
+# To drop all tables and have a clean slate to begin with
 if(App::environment('local')) {
 
     Route::get('/drop', function() {

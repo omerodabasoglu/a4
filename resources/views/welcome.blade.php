@@ -8,44 +8,29 @@
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah%7CUbuntu" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/college.css" />
+    <link rel="stylesheet" href="css/college2.css" />
 
 </head>
 <body>
 
     <header>
-        COLLEGE ACCEPTANCE PROFILE
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/profiler">Profiler</a></li>
-                <li><a href="/entries">View Entries</a></li>
-                <li><a href="/print">Print Profile</a></li>
-            </ul>
-        </nav>
+        COLLEGE SPORTS
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <ul class="nav nav-pills">
+                        <li class="active"><a href="./" data-toggle="tab" aria-expanded="true">Home</a></li>
+                        <li class=""><a href="./sports" data-toggle="tab" aria-expanded="true">Add Sports</a></li>
+                        <li class=""><a href="./entries" data-toggle="tab" aria-expanded="true">View Entries</a></li>
+                        <li class=""><a href="./print" data-toggle="tab" aria-expanded="true">Print List</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
     </header>
     <div id="homepage">
-        <p>
-            This application is designed to assist college counselors who might be looking for a tool to create
-            a College Acceptance Profile for the graduating senior students. The application takes in some data
-            as described below, and then creates a profile page with the acceptance information of the graduating
-            students.
-        </p></br>
-
-            <ol>
-                <li>Name of your high school is entered in this field</li></br>
-                <li>This is the year that the students are graduating</li></br>
-                <li>Starting with this field, you will be entering individual data for each college. First, type
-                  the college name in this field.</li></br>
-                <li>Enter the number of students who have been accepted by the college that you entered above</li></br>
-            </ol>
-
-        <p>
-            Once all data is entered for a specific college, click on "Add" button to add the current entry. Repeat these steps for
-            all colleges that accepted your students this year. You can view and modify your entries by clicking
-            on "View Entries". After adding the last college, click on "Print Profile" to complete the process.
-        </p>
+        All colleges with their logo and edit, delete and view buttons are listed here
   </div>
 </body>
     <footer>
