@@ -32,7 +32,7 @@
         </td></tr>
         </tbody></table></div>
 
-        @foreach($tagsForCheckboxes as $id => $name)
+        @foreach($sportsForCheckboxes as $id => $name)
             <input
                 type='checkbox'
                 value='{{ $id }}'

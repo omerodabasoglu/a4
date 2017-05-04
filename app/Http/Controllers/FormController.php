@@ -33,8 +33,13 @@ class FormController extends Controller
             Session::flash('message', 'The college could not be found.');
             return redirect('/');
         }
+        $next = $institution->id + 1;
+        $previous = $institution->id -1;
         return view('college.show')->with([
             'institution' => $institution,
+            'next' => $next,
+            'previous' => $previous,
+
         ]);
     }
 
@@ -108,7 +113,7 @@ class FormController extends Controller
 
          return view('college.edit')->with([
              'id' => $id,
-             'college' => $institution,
+             'institution' => $institution,
              'sportsForCheckboxes' => $sportsForCheckboxes,
              'sportsForThisBook' => $sportsForThisInstitution,
          ]);
@@ -160,7 +165,7 @@ class FormController extends Controller
              Session::flash('message', 'College not found.');
              return redirect('/');
          }
-         return view('college.delete')->with('college', $institution);
+         return view('college.delete')->with('institution', $institution);
      }
      /**
      * POST

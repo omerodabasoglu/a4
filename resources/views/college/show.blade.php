@@ -12,17 +12,19 @@
 
     <p>
 
-    Level: {{ $institution->level }} .....
+    Level: {{ $institution->level }}  *          *
 
-    Type: {{ $institution->type }} .....
+    Type: {{ $institution->type }}</p>
 
-    Added on: {{ $institution->created_at }} .....
+    <p>Added on: {{ $institution->created_at }} *          *
 
-    Last updated: {{ $institution->updated_at }} .....
+    Last updated: {{ $institution->updated_at }} </p>
 
-    <a class='institutionAction' href='./edit/{{ $institution->id }}'><i class='fa fa-pencil'></i></a>
-    <a class='institutionAction' href='./{{ $institution->id }}/delete'><i class='fa fa-trash'></i></a>
-
+    <p>
+        <a class='institutionAction' href='./{{ $previous }}'><i class='fa fa-arrow-circle-left fa-fw'></i></a>
+        <a class='institutionAction' href='./edit/{{ $institution->id }}'><i class='fa fa-pencil fa-fw'></i></a>
+        <a class='institutionAction' href='./{{ $institution->id }}/delete'><i class='fa fa-trash fa-fw'></i></a>
+        <a class='institutionAction' href='./{{ $next }}'><i class='fa fa-arrow-circle-right fa-fw'></i></a>
     </p>
 
 @endsection

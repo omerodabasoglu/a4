@@ -13,9 +13,10 @@ class InstitutionSportTableSeeder extends Seeder
      */
     public function run()
     {
+
         $institutions =[
             'Stanford University' => ['Baseball', 'Basketball','Field Hockey', 'Football'],
-            'Harvard University' => ['Bowling', 'Boxing','classic','Golf', 'Gymnastics'],
+            'Harvard University' => ['Bowling', 'Boxing','Golf', 'Gymnastics'],
             'Princeton University' => ['Cross Country','Ice Hockey','Lacrosse', 'Rowing'],
             'UC San Diego' => ['Soccer', 'Swimming', 'Tennis', 'Volleyball']
         ];
