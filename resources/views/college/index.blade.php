@@ -26,9 +26,9 @@
                     <td>{{ $institution->level }}</td>
                     <td>{{ $institution->type }}</td>
                     <td>
-                      <a class='institutionAction' href='/edit/{{ $institution->id }}'><i class='fa fa-pencil'></i></a>
-                      <a class='institutionAction' href='/{{ $institution->id }}'><i class='fa fa-eye'></i></a>
-                      <a class='institutionAction' href='/delete/{{ $institution->id }}'><i class='fa fa-trash'></i></a>
+                      <a class='institutionAction' href='./edit/{{ $institution->id }}'><i class='fa fa-pencil'></i></a>
+                      <a class='institutionAction' href='./{{ $institution->id }}'><i class='fa fa-eye'></i></a>
+                      <a class='institutionAction' href='./delete/{{ $institution->id }}'><i class='fa fa-trash'></i></a>
                     </td>
                 </tr>
 

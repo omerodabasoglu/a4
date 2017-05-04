@@ -5,12 +5,22 @@ td {
     background-color: yellow;
 }
 
+#navbar, .Logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p, .institutionAction {
+    font-size: 1.5em;
+}
+
 input:submit {
     margin-left: 40%;
     width: 200px;
 }
 
-h4, p {
+h4, p, h2 {
     text-align: center;
     padding-top: 25px;
 }
@@ -31,10 +41,8 @@ header {
     text-align: center;
     font-size: 2em;
     margin-top: 5%;
-    
+
 }
-
-
 
 footer {
     margin: auto;

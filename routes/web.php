@@ -31,6 +31,9 @@ Route::get('/delete/{id}', 'FormController@confirmDeletion');
 # Post route to actually delete the book
 Route::post('/delete', 'FormController@delete');
 
+# Get route to show an individual institution
+Route::get('/{id?}', 'FormController@show');
+
 # To drop all tables and have a clean slate to begin with
 if(App::environment('local')) {
 

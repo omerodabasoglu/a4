@@ -12,154 +12,171 @@ class FormController extends Controller
 {
     public function index(Request $request) {
 
-        $institutions = institutions()->orderBy('college')->get();
+        $institutions = Institution::orderBy('college')->get();
 
-        $newInstitutions = $institutions->sortByDesc('created_at')->take(3);
+        $newInstitutions = $institutions->sortByDesc('created_at')->take(8);
 
         return view('college.index')->with([
             'institutions' => $institutions,
             'newInstitutions' => $newInstitutions,
         ]);
 
+}
 
-  /**
-  * ./sports
-  * Display the form to add a new institution
-  */
-  public function addNewInstitution(Request $request) {
-
-      $sportsForCheckboxes = Sport::getSportsForCheckboxes();
-
-      return view('college.sports')->with([
-          'sportsForCheckboxes' => $sportsForCheckboxes,
-      ]);
-
-  }
-
-  /**
-    * POST
-    * ./sports
-    * Process the form for adding a new institution
+    /**
+    * /{id}
+    * Shows individual institution
     */
-    public function storeNewInstitution(Request $request) {
+    public function show($id) {
+        $institution = Institution::find($id);
+        if(!$institution) {
+            Session::flash('message', 'The college could not be found.');
+            return redirect('/');
+        }
+        return view('college.show')->with([
+            'institution' => $institution,
+        ]);
+    }
 
-        $this->validate($request, [
-            'college' => 'required|alpha|min:3',
-            'level' => 'required',
-            'type' => 'required',
-            'logo' => 'required|url',
+
+    /**
+    * ./sports
+    * Display the form to add a new institution
+    */
+    public function addNewInstitution(Request $request) {
+
+        $sportsForCheckboxes = Sport::getSportsForCheckboxes();
+
+        return view('college.sports')->with([
+            'sportsForCheckboxes' => $sportsForCheckboxes,
         ]);
 
-        # Add new Institution to database
-        $institution = new institution();
-        $institution->college = $request->college;
-        $institution->level = $request->level;
-        $institution->type = $request->type;
-        $institution->logo = $request->logo;
-
-        #$institution->user_id = $request->user()->id;
-        $institution->save();
-
-        # Sports are syncd here
-
-        $sports = ($request->sports) ?: [];
-        $institution->sports()->sync($sports);
-        $institution->save();
-        Session::flash('message', 'The '.$request->college.' has been added to the database.');
-
-        # Redirecting to the database
-        return redirect('/');
     }
 
     /**
-   * GET
-   * /edit/{id}
-   * Show form to edit an entry
-   */
-   public function edit($id) {
-       $institution = Institution::with('sports')->find($id);
-       if(is_null($institution)) {
-           Session::flash('message', 'The institution was not found.');
-           return redirect('/');
-       }
-       $sportsForCheckboxes = Sport::getSportsForCheckboxes();
+      * POST
+      * ./sports
+      * Process the form for adding a new institution
+      */
+      public function storeNewInstitution(Request $request) {
 
-       $sportsForThisInstitution = [];
-       foreach($institution->sports as $sport) {
-           $sportsForThisInstitution[] = $sport->name;
-       }
+          $this->validate($request, [
+              'college' => 'required|alpha|min:3',
+              'level' => 'required',
+              'type' => 'required',
+              'logo' => 'required|url',
+          ]);
 
-       return view('college.edit')->with([
-           'id' => $id,
-           'college' => $institution,
-           'sportsForCheckboxes' => $sportsForCheckboxes,
-           'sportsForThisBook' => $sportsForThisInstitution,
-       ]);
-   }
-   /**
-   * POST
-   * /edit
-   * Process form to save edits to an institution
-   */
-   public function saveEdits(Request $request) {
+          # Add new Institution to database
+          $institution = new institution();
+          $institution->college = $request->college;
+          $institution->level = $request->level;
+          $institution->type = $request->type;
+          $institution->logo = $request->logo;
 
-       $this->validate($request, [
-           'college' => 'required|alpha|min:3',
-           'level' => 'required',
-           'type' => 'required',
-           'logo' => 'required|url',
-       ]);
+          #$institution->user_id = $request->user()->id;
+          $institution->save();
 
-       $institution = Institution::find($request->id);
-       # Edit institution in the database
-       $institution->college = $request->college;
-       $institution->level = $request->level;
-       $institution->type = $request->type;
-       $institution->logo = $request->logo;
-       # If there were sports selected...
-       if($request->sports) {
-           $sports = $request->sports;
-       }
-       # If there were no sports selected (i.e. no sports in the request)
-       # default to an empty array of sports
-       else {
-           $sports = [];
-       }
+          # Sports are syncd here
 
-       $institution->sports()->sync($sports);
-       $institution->save();
-       Session::flash('message', 'Your changes to '.$institution->college' were saved.');
-       return redirect('edit/'.$request->id);
-   }
+          $sports = ($request->sports) ?: [];
+          $institution->sports()->sync($sports);
+          $institution->save();
+          Session::flash('message', 'The '.$request->college.' has been added to the database.');
 
-   /**
-   * GET
-   * Page to confirm deletion
-   */
-   public function confirmDeletion($id) {
-       # Get the Institution to be deleted
-       $institution = Institution::find($id);
-       if(!$institution) {
-           Session::flash('message', 'College not found.');
-           return redirect('/');
-       }
-       return view('college.delete')->with('college', $institution;
-   }
-   /**
-   * POST
-   * Actually delete the institution
-   */
-   public function delete(Request $request) {
-       # Get the institution to be deleted
-       $institution = Institution::find($request->id);
-       if(!$institution) {
-           Session::flash('message', 'Deletion failed; college not found.');
-           return redirect('/');
-       }
-       $institution->sports()->detach();
-       $institution->delete();
-       # Finish
-       Session::flash('message', $institution->college.' was deleted.');
-       return redirect('/');
-   }
-}
+          # Redirecting to the database
+          return redirect('/');
+      }
+
+      /**
+     * GET
+     * /edit/{id}
+     * Show form to edit an entry
+     */
+     public function edit($id) {
+         $institution = Institution::with('sports')->find($id);
+         if(is_null($institution)) {
+             Session::flash('message', 'The institution was not found.');
+             return redirect('/');
+         }
+         $sportsForCheckboxes = Sport::getSportsForCheckboxes();
+
+         $sportsForThisInstitution = [];
+         foreach($institution->sports as $sport) {
+             $sportsForThisInstitution[] = $sport->name;
+         }
+
+         return view('college.edit')->with([
+             'id' => $id,
+             'college' => $institution,
+             'sportsForCheckboxes' => $sportsForCheckboxes,
+             'sportsForThisBook' => $sportsForThisInstitution,
+         ]);
+     }
+     /**
+     * POST
+     * /edit
+     * Process form to save edits to an institution
+     */
+     public function saveEdits(Request $request) {
+
+         $this->validate($request, [
+             'college' => 'required|alpha|min:3',
+             'level' => 'required',
+             'type' => 'required',
+             'logo' => 'required|url',
+         ]);
+
+         $institution = Institution::find($request->id);
+         # Edit institution in the database
+         $institution->college = $request->college;
+         $institution->level = $request->level;
+         $institution->type = $request->type;
+         $institution->logo = $request->logo;
+         # If there were sports selected...
+         if($request->sports) {
+             $sports = $request->sports;
+         }
+         # If there were no sports selected (i.e. no sports in the request)
+         # default to an empty array of sports
+         else {
+             $sports = [];
+         }
+
+         $institution->sports()->sync($sports);
+         $institution->save();
+         Session::flash('message', 'Your changes to '.$institution->college.' were saved.');
+         return redirect('/edit'.$request->id);
+     }
+
+     /**
+     * GET
+     * Page to confirm deletion
+     */
+     public function confirmDeletion($id) {
+         # Get the Institution to be deleted
+         $institution = Institution::find($id);
+         if(!$institution) {
+             Session::flash('message', 'College not found.');
+             return redirect('/');
+         }
+         return view('college.delete')->with('college', $institution);
+     }
+     /**
+     * POST
+     * Actually delete the institution
+     */
+     public function delete(Request $request) {
+         # Get the institution to be deleted
+         $institution = Institution::find($request->id);
+         if(!$institution) {
+             Session::flash('message', 'Deletion failed; college not found.');
+             return redirect('/');
+         }
+         $institution->sports()->detach();
+         $institution->delete();
+         # Finish
+         Session::flash('message', $institution->college.' was deleted.');
+         return redirect('/');
+     }
+  }
