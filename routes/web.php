@@ -23,7 +23,7 @@ Route::post('/sports', 'FormController@storeNewInstitution');
 Route::get('/edit/{id}', 'FormController@edit');
 
 # Post route to process the form to save edits to a institution
-Route::post('/edit', 'FormController@saveEdits');
+Route::post('/', 'FormController@saveEdits');
 
 # Get route to confirm deletion of book
 Route::get('/delete/{id}', 'FormController@confirmDeletion');

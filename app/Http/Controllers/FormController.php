@@ -151,7 +151,7 @@ class FormController extends Controller
          $institution->sports()->sync($sports);
          $institution->save();
          Session::flash('message', 'Your changes to '.$institution->college.' were saved.');
-         return redirect('/edit'.$request->id);
+         return redirect('/edit/'.$request->id);
      }
 
      /**

@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <form method="POST" action="./edit">
+    <form method="POST" action="./">
         {{ csrf_field() }}
 
         <p> Please submit the sports offered at a college via this form.</p>
@@ -43,7 +43,7 @@
         @endforeach
 
         <div class="form-group">
-            <input type='submit' class="btn btn-primary" id="submit" value="Add">
+            <input type='submit' class="btn btn-primary" id="submit" value="Save">
         </div>
     </form>
 
