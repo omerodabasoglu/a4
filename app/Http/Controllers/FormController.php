@@ -115,7 +115,7 @@ class FormController extends Controller
              'id' => $id,
              'institution' => $institution,
              'sportsForCheckboxes' => $sportsForCheckboxes,
-             'sportsForThisBook' => $sportsForThisInstitution,
+             'sportsForThisInstitution' => $sportsForThisInstitution,
          ]);
      }
      /**
