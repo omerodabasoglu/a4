@@ -29,7 +29,7 @@
         </td></tr>
         </tbody></table></div>
 
-        <label>Sports</label>
+        <p class="sportslabel">Sports</p>
         <ul id='sports'>
             @foreach($sportsForCheckboxes as $id => $categories)
                 <li><input
@@ -41,6 +41,7 @@
                 <label for='sport_{{ $id }}'>{{ $categories }}</label></li>
             @endforeach
         </ul>
+
 
         <p> &#42;: required fields</p>
 
