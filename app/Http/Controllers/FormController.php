@@ -127,7 +127,7 @@ class FormController extends Controller
      public function saveEdits(Request $request) {
 
          $this->validate($request, [
-             'college' => 'required|alpha|min:3',
+             'college' => 'required|alpha_spaces|min:3',
              'level' => 'required',
              'type' => 'required',
              'logo' => 'required|url',

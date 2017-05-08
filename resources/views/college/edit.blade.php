@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <form method="POST" action="/">
+    <form method="POST" action="/edit/{{ $id }}">
         {{ csrf_field() }}
 
         <p> Please submit the sports offered at a college via this form.</p>
