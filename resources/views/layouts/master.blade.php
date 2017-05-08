@@ -24,8 +24,7 @@
 
                 <ul class="nav nav-tabs">
                     <li class=""><a href="./" data-toggle="tab" aria-expanded="true">Home</a></li>
-                    <li class=""><a href="./sports" data-toggle="tab" aria-expanded="true">Add Sports</a></li>
-                    <li class=""><a href="./edit" data-toggle="tab" aria-expanded="true">Edit Entries</a></li>
+                    <li class=""><a href="./sports" data-toggle="tab" aria-expanded="true">Add a new College</a></li>
                     <li class=""><a href="./print" data-toggle="tab" aria-expanded="true">Print List</a></li>
                 </ul>
 

@@ -11,7 +11,7 @@ class Sport extends Model
     }
 
     public static function getSportsForCheckboxes() {
-        $sports = Sport::orderBy('categories','DESC')->get();
+        $sports = Sport::orderBy('categories','ASC')->get();
         $sportsForCheckboxes = [];
         foreach($sports as $sport) {
             $sportsForCheckboxes[$sport['id']] = $sport->categories;

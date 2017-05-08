@@ -16,6 +16,7 @@
                 <th>College</th>
                 <th>Level</th>
                 <th>Type</th>
+                <th>Sports</th>
             </tr>
         </thead>
         <tbody>
@@ -27,6 +28,11 @@
                     <td>{{ $institution->college }}</td>
                     <td>{{ $institution->level }}</td>
                     <td>{{ $institution->type }}</td>
+                    <td>
+                        @foreach($institution->sports as $sport)
+                            {{ $sport->categories }},
+                        @endforeach
+                    </td>
                     <td>
                       <a class='institutionAction' href='./edit/{{ $institution->id }}'><i class='fa fa-pencil'></i></a>
                       <a class='institutionAction' href='./{{ $institution->id }}'><i class='fa fa-eye'></i></a>

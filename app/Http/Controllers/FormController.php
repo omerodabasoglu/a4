@@ -1,11 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Institution;
 use App\Sport;
-
 use Session;
 
 class FormController extends Controller
@@ -16,9 +14,12 @@ class FormController extends Controller
 
         $newInstitutions = $institutions->sortByDesc('created_at')->take(8);
 
+
+
         return view('college.index')->with([
             'institutions' => $institutions,
             'newInstitutions' => $newInstitutions,
+
         ]);
 
 }
@@ -108,7 +109,7 @@ class FormController extends Controller
 
          $sportsForThisInstitution = [];
          foreach($institution->sports as $sport) {
-             $sportsForThisInstitution[] = $sport->name;
+             $sportsForThisInstitution[] = $sport->categories;
          }
 
          return view('college.edit')->with([
@@ -151,7 +152,7 @@ class FormController extends Controller
          $institution->sports()->sync($sports);
          $institution->save();
          Session::flash('message', 'Your changes to '.$institution->college.' were saved.');
-         return redirect('./'.$request->id);
+         return redirect('/'.$request->id);
      }
 
      /**
