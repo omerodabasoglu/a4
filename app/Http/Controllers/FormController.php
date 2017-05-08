@@ -24,6 +24,24 @@ class FormController extends Controller
 
 }
 
+public function print(Request $request) {
+
+    $institutions = Institution::orderBy('college')->get();
+
+    $newInstitutions = $institutions->sortByDesc('created_at');
+
+
+
+    return view('college.print')->with([
+        'institutions' => $institutions,
+        'newInstitutions' => $newInstitutions,
+
+    ]);
+
+}
+
+
+
     /**
     * /{id}
     * Shows individual institution
@@ -67,10 +85,10 @@ class FormController extends Controller
       public function storeNewInstitution(Request $request) {
 
           $this->validate($request, [
-              'college' => 'required|alpha|min:3',
+              'college' => 'required|min:3',
               'level' => 'required',
               'type' => 'required',
-              'logo' => 'required|url',
+              'logo' => 'required|image|url',
           ]);
 
           # Add new Institution to database
@@ -127,10 +145,10 @@ class FormController extends Controller
      public function saveEdits(Request $request) {
 
          $this->validate($request, [
-             'college' => 'required|alpha_spaces|min:3',
+             'college' => 'required|min:3',
              'level' => 'required',
              'type' => 'required',
-             'logo' => 'required|url',
+             'logo' => 'required|image|url',
          ]);
 
          $institution = Institution::find($request->id);

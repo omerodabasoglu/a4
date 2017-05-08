@@ -178,6 +178,9 @@ return [
 
         Barryvdh\Debugbar\ServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
+
+        /*----------Generate Data To PDF--------------------------------------*/
+        Barryvdh\DomPDF\ServiceProvider::class,
     ],
 
     /*
@@ -228,6 +231,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class,
 
     ],
 

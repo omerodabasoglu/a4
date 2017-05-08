@@ -10,8 +10,10 @@ if(config('app.env') == 'local') {
 
 
 # Main homepage
-
 Route::get('/', 'FormController@index');
+
+# Main homepage
+Route::get('/print', 'FormController@print');
 
 # Get route to show a form to create a add a new institution
 Route::get('/sports', 'FormController@addNewInstitution');

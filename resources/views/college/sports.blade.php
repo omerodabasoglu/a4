@@ -11,10 +11,11 @@
         <table><tbody>
 
         <tr><td><label for="college">Name of the College &#42;</label></td>
-        <td><input required type="text" maxlength="40" size="60" name="college" id="college"></td></tr>
+        <td><input required pattern="[a-zA-Z\s]+" type="text" maxlength="40" size="60" name="college" id="college"></td></tr>
 
         <tr><td><label for="logo">Link to College Logo &#42;</label></td>
-        <td><input required type="text" size="60" name="logo" id="logo"></td></tr>
+        <td><input required type="text" size="60" name="logo" id="logo">Please check the url to
+          make sure it links to the college logo, otherwise this entry may not be added.</td></tr>
 
         <tr><td><label for="level">Level &#42;</label></td>
         <td><select required name="level" id="level">
