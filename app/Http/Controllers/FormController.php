@@ -88,7 +88,7 @@ public function print(Request $request) {
               'college' => 'required|min:3',
               'level' => 'required',
               'type' => 'required',
-              'logo' => 'required|image|url',
+              'logo' => 'required',
           ]);
 
           # Add new Institution to database
@@ -148,7 +148,7 @@ public function print(Request $request) {
              'college' => 'required|min:3',
              'level' => 'required',
              'type' => 'required',
-             'logo' => 'required|image|url',
+             'logo' => 'required',
          ]);
 
          $institution = Institution::find($request->id);
