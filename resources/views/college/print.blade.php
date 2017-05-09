@@ -12,12 +12,12 @@
     <table class="table table-striped table-hover col-6">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Logo</th>
-                <th>College</th>
-                <th>Level</th>
-                <th>Type</th>
-                <th>Sports</th>
+                <th id="cellId">ID</th>
+                <th id="cellLogo">Logo</th>
+                <th id="cellCollege">College</th>
+                <th id="cellLevel">Level</th>
+                <th id="cellType">Type</th>
+                <th id="cellSports">Sports</th>
             </tr>
         </thead>
         <tbody>

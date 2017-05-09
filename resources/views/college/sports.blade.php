@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('title')
+    Add a new College
+@endsection
+
 @section('content')
 
     <form method="POST" action="./sports">
@@ -14,8 +18,8 @@
         <td><input required pattern="[a-zA-Z\s]+" type="text" maxlength="40" size="60" name="college" id="college"></td></tr>
 
         <tr><td><label for="logo">Link to College Logo &#42;</label></td>
-        <td><input required type="text" size="60" name="logo" id="logo">Please check the url to
-          make sure it links to the college logo, otherwise this entry may not be added.</td></tr>
+        <td><input required type="text" size="60" name="logo" id="logo"></br><span id="logoNote">Please check the url to
+          make sure it links to the college logo, otherwise this entry may not be added.</span></td></tr>
 
         <tr><td><label for="level">Level &#42;</label></td>
         <td><select required name="level" id="level">
@@ -25,12 +29,12 @@
             <option value="Division III">Division III</option>
         </select></td></tr>
         <tr><td><label for="type">College Type &#42;</label></td>
-        <td><label><input required type="radio" name="type" id="type">  Public</label>
-            <label><input required type="radio" name="type" id="type">  Private</label>
+        <td><label><input required type="radio" name="type" id="type" value="Public">  Public</label>
+            <label><input required type="radio" name="type" id="type" value="Private">  Private</label>
         </td></tr>
         </tbody></table></div>
 
-        <p class="sportslabel">Sports</p>
+        <h3 class="sportslabel">SPORTS</h3>
         <ul id='sports'>
             @foreach($sportsForCheckboxes as $id => $categories)
                 <li><input

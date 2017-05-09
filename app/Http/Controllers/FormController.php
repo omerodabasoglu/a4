@@ -12,7 +12,7 @@ class FormController extends Controller
 
         $institutions = Institution::orderBy('college')->get();
 
-        $newInstitutions = $institutions->sortByDesc('created_at')->take(8);
+        $newInstitutions = $institutions->sortByDesc('created_at')->take(4);
 
 
 
@@ -26,9 +26,9 @@ class FormController extends Controller
 
 public function print(Request $request) {
 
-    $institutions = Institution::orderBy('college')->get();
+    $institutions = Institution::orderBy('level')->get();
 
-    $newInstitutions = $institutions->sortByDesc('created_at');
+    $newInstitutions = $institutions->sortBy('id');
 
 
 
@@ -88,7 +88,7 @@ public function print(Request $request) {
               'college' => 'required|min:3',
               'level' => 'required',
               'type' => 'required',
-              'logo' => 'required',
+              'logo' => 'required|url',
           ]);
 
           # Add new Institution to database
@@ -148,7 +148,7 @@ public function print(Request $request) {
              'college' => 'required|min:3',
              'level' => 'required',
              'type' => 'required',
-             'logo' => 'required',
+             'logo' => 'required|url',
          ]);
 
          $institution = Institution::find($request->id);
