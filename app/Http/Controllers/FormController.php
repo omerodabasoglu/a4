@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Institution;
 use App\Sport;
 use Session;
+use Auth;
 
 class FormController extends Controller
 {
@@ -50,7 +51,7 @@ public function print(Request $request) {
         $institution = Institution::find($id);
         if(!$institution) {
             Session::flash('message', 'The college could not be found.');
-            return redirect('/');
+            return redirect('/home');
         }
         $next = $institution->id + 1;
         $previous = $institution->id -1;
@@ -68,7 +69,10 @@ public function print(Request $request) {
     * Display the form to add a new institution
     */
     public function addNewInstitution(Request $request) {
-
+        if(!Auth::check()) {
+            Session::flash('message','You need to be logged in to add a new college');
+            return redirect('/');
+        }
         $sportsForCheckboxes = Sport::getSportsForCheckboxes();
 
         return view('college.sports')->with([

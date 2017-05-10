@@ -8,7 +8,7 @@
 
     <h4>{{ $institution->college }}</h4>
 
-    <a href='/{{ $institution->id }}'><img class='Logo' src='{{ $institution->logo }}' height="150" alt='{{ $institution->college }} logo'></a>
+    <a href='/sports/{{ $institution->id }}'><img class='Logo' src='{{ $institution->logo }}' height="150" alt='{{ $institution->college }} logo'></a>
     </br>
     <p id="showInfo">
 

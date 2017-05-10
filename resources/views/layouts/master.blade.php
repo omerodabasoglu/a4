@@ -21,13 +21,24 @@
         @yield('header', 'COLLEGE SPORTS')
     </header>
     <div id="navbar">
-        <ul class="nav nav-tabs">
 
-          <li class="{{ Request::is('/') ? "active" : '' }}"><a class="{{ Request::is('/') ? "current" : '' }}" href="./" data-toggle="tab" aria-expanded="true">Home</a></li>
-          <li class="{{ Request::is('sports') ? "active" : '' }}"><a class="{{ Request::is('sports') ? "current" : '' }}" href="./sports" data-toggle="tab" aria-expanded="true">Add a new College</a></li>
-          <li class="{{ Request::is('print') ? "active" : '' }}"><a class="{{ Request::is('print') ? "current" : '' }}" href="./print" data-toggle="tab" aria-expanded="true">Print List</a></li>
-
-        </ul>
+            <ul class="nav nav-tabs">
+                @if(Auth::check())
+                    <li class="{{ Request::is('/') ? "active" : '' }}"><a class="{{ Request::is('/') ? "current" : '' }}" href="./" data-toggle="tab" aria-expanded="true">HOME</a></li>
+                    <li class="{{ Request::is('sports') ? "active" : '' }}"><a class="{{ Request::is('sports') ? "current" : '' }}" href="./sports" data-toggle="tab" aria-expanded="true">ADD A NEW COLLEGE</a></li>
+                    <li class="{{ Request::is('print') ? "active" : '' }}"><a class="{{ Request::is('print') ? "current" : '' }}" href="./print" data-toggle="tab" aria-expanded="true">PRINT LIST</a></li>
+                    <li>
+                        <form method='POST' id='logout' action='./logout'>
+                            {{csrf_field()}}
+                            <a href='#' onClick='document.getElementById("logout").submit();'>Logout</a>
+                        </form>
+                    </li>
+                @else
+                <li class="{{ Request::is('/') ? "active" : '' }}"><a class="{{ Request::is('/') ? "current" : '' }}" href="./" data-toggle="tab" aria-expanded="true">Home</a></li>
+                <li class="{{ Request::is('sports') ? "active" : '' }}"><a class="{{ Request::is('sports') ? "current" : '' }}" href="./login" data-toggle="tab" aria-expanded="true">LOGIN</a></li>
+                <li class="{{ Request::is('print') ? "active" : '' }}"><a class="{{ Request::is('print') ? "current" : '' }}" href="./register" data-toggle="tab" aria-expanded="true">REGISTER</a></li>
+                @endif
+            </ul>
     </div>
 
 

@@ -34,7 +34,7 @@
                     </td>
                     <td id="cellIcons">
                       <a class='institutionAction' href='./edit/{{ $institution->id }}'><i class='fa fa-pencil'></i></a>
-                      <a class='institutionAction' href='./{{ $institution->id }}'><i class='fa fa-eye'></i></a>
+                      <a class='institutionAction' href='./sports/{{ $institution->id }}'><i class='fa fa-eye'></i></a>
                       <a class='institutionAction' href='./delete/{{ $institution->id }}'><i class='fa fa-trash'></i></a>
                     </td>
                 </tr>
