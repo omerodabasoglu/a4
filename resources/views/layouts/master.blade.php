@@ -5,7 +5,7 @@
     <title>@yield('title', 'Assignment 4')</title>
     <meta charset="utf-8">
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" >
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Rock+Salt|Inknut+Antiqua|Gloria+Hallelujah|Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Ubuntu" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.css" />
