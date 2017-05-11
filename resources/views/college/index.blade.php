@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    View Entries
+    Assignment 4
 @endsection
 
 @section('content')
@@ -21,13 +21,14 @@
                 <th id="cellLevel">Level</th>
                 <th id="cellType">Type</th>
                 <th id="cellSports">Sports</th>
+                <th id="cellIcons"></th>
             </tr>
         </thead>
         <tbody>
             @foreach($newInstitutions as $institution)
 
                 <tr>
-                    <td><img class="Logo" src="{{ $institution->logo }}" alt="{{ $institution->college }} logo" height="40"</td>
+                    <td><img class="Logo" src="{{ $institution->logo }}" alt="{{ $institution->college }} logo" height="40"></td>
                     <td>{{ $institution->college }}</td>
                     <td>{{ $institution->level }}</td>
                     <td>{{ $institution->type }}</td>
@@ -36,7 +37,7 @@
                             {{ $sport->categories }},
                         @endforeach
                     </td>
-                    <td id="cellIcons">
+                    <td>
                       <a class='institutionAction' href='./edit/{{ $institution->id }}'><img src="{{ asset('css/edit48.png') }}" alt="Edit" width="32"></a>
                       <a class='institutionAction' href='./sports/{{ $institution->id }}'><img src="{{ asset('css/eye.png') }}" alt="Show" width="32"></a>
                       <a class='institutionAction' href='./delete/{{ $institution->id }}'><img src="{{ asset('css/delete.png') }}" alt="Delete" width="32"></a>

@@ -1,11 +1,15 @@
 @extends('layouts.master')
 
+@section('title')
+    Login
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel-body">
-                <form class="form-horizontal" role="form" method="POST" action="/login">
+                <form class="form-horizontal" method="POST" action="/login">
                     {{ csrf_field() }}
                     <table id="table"><tbody>
                     <tr><td><label for="email">E-Mail Address</label></td>
@@ -15,7 +19,7 @@
                     @endif
                     </td></tr>
                     <tr><td><label for="password">Password</label></td>
-                    <td><input id="password" type="password"name="password" required>
+                    <td><input id="password" type="password" name="password" required>
                     @if ($errors->has('password'))
                         <div class="error">{{ $errors->first('email') }}</div>
                     @endif
