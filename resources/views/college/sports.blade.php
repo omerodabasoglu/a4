@@ -29,8 +29,8 @@
             <option value="Division III">Division III</option>
         </select></td></tr>
         <tr><td><label for="type">College Type &#42;</label></td>
-        <td class="type"><label><input required type="radio" name="type" id="public" value="Public">  Public</label>
-            <label><input required type="radio" name="type" id="private" value="Private">  Private</label>
+        <td class="type"><label><input required type="radio" name="type" id="type" value="Public">  Public</label>
+            <label><input required type="radio" name="type" id="type" value="Private">  Private</label>
         </td></tr>
         </tbody></table>
 

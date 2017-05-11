@@ -14,7 +14,7 @@
 
     * Level: {{ $institution->level }} *&#160;&#160;&#160;* Type: {{ $institution->type }} *</p>
 
-    <p class"showInfo">* Last updated: {{ $institution->updated_at }} *</p>
+    <p class="showInfo">* Last updated: {{ $institution->updated_at }} *</p>
 
     <p class="showInfo"><strong>SPORTS: </strong>
       @foreach($institution->sports as $sport)
