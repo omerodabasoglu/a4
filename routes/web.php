@@ -60,11 +60,6 @@ Auth::routes();
 
 Route::get('/home', 'FormController@index');
 
-Route::get('/logout', function() {
-    Auth::logout();
-    dump("You've been logged out");
-});
-
 if(config('app.env') == 'local') {
     #temporary route to check login session_status
     Route::get('/show-login-status', function() {
@@ -78,5 +73,10 @@ if(config('app.env') == 'local') {
             dump('You are not logged in.');
 
         return;
+    });
+
+    Route::get('/logout', function() {
+        Auth::logout();
+        dump("You've been logged out");
     });
 }
