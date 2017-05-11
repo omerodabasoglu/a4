@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.css" />
-    <link type="text/css" rel="stylesheet" href="{{ asset('css/college13.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/college14.css') }}" />
     <link type="text/css" rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" />
 </head>
 <body>
@@ -28,7 +28,7 @@
                     <li class="{{ Request::is('sports') ? "active" : '' }}"><a class="{{ Request::is('sports') ? "current" : '' }}" href="/sports" data-toggle="tab" aria-expanded="true">ADD A NEW COLLEGE</a></li>
                     <li class="{{ Request::is('print') ? "active" : '' }}"><a class="{{ Request::is('print') ? "current" : '' }}" href="/print" data-toggle="tab" aria-expanded="true">PRINT LIST</a></li>
                     <li>
-                        <form method='POST' id="logout" action='logout'>
+                        <form method='POST' id="logout" action='./logout'>
                             {{csrf_field()}}
                             <a class="logoutButton" href='#' onClick='document.getElementById("logout").submit();'>Logout</a>
                         </form>
