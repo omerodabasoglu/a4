@@ -23,10 +23,10 @@
     </p>
 
     <p id="showIcons">
-        <a class='institutionAction' href='./{{ $previous }}'><i class='fa fa-arrow-circle-left fa-fw'></i></a>
-        <a class='institutionAction' href='./edit/{{ $institution->id }}'><i class='fa fa-pencil fa-fw'></i></a>
-        <a class='institutionAction' href='./delete/{{ $institution->id }}'><i class='fa fa-trash fa-fw'></i></a>
-        <a class='institutionAction' href='./{{ $next }}'><i class='fa fa-arrow-circle-right fa-fw'></i></a>
+        <a class='institutionAction' href='./{{ $previous }}'><img src="{{ asset('css/arrows-left.png') }}" alt="Previous" ></a>
+        <a class='institutionAction' href='./edit/{{ $institution->id }}'><img src="{{ asset('css/edit48.png') }}" alt="Edit" ></a>
+        <a class='institutionAction' href='./delete/{{ $institution->id }}'><img src="{{ asset('css/delete.png') }}" alt="Delete" ></a>
+        <a class='institutionAction' href='./{{ $next }}'><img src="{{ asset('css/arrow-right.png') }}" alt="Next" ></a>
     </p>
 
 @endsection

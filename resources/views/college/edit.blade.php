@@ -10,9 +10,9 @@
         {{ csrf_field() }}
 
 
-        <div id="table"><h4>EDIT COLLEGE INFORMATION</h4>
+        <h4>EDIT COLLEGE INFORMATION</h4>
         </br>
-        <table><tbody>
+        <table id="table"><tbody>
 
         <tr><td><label for="college">Name of the College &#42;</label></td>
         <td><input required pattern="[a-zA-Z\s]+" type="text" maxlength="40" size="60" name="college"
@@ -47,7 +47,7 @@
                     >
                     {{ $name }} <br></li>
                 @endforeach
-            </ul>
+            </ul></br>
         <div class="form-group">
             <input type='submit' class="btn btn-primary" id="submit" value="Save">
         </div>

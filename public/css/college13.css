@@ -19,8 +19,6 @@ header {
     width: 100%;
     font-weight: bold;
     text-shadow: 2px 2px 4px #000000;
-    transition: 2s;
-    -webkit-transition: 2s;
     color: #f1f2f2;
     font-family: 'Gloria Hallelujah';
 }
