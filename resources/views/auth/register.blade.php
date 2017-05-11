@@ -40,7 +40,7 @@
                         </td></tr>
                        </tbody></table>
                         <br><p>* Required fields</p>
-                        <input id="register" type="submit" class="btn btn-primary" value="Register">
+                        <input type="submit" class="btn btn-primary" value="Register">
 
                     </form>
                   </div>
