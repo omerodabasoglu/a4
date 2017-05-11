@@ -10,9 +10,9 @@
         {{ csrf_field() }}
 
         <p> Please submit the sports offered at a college via this form.</p>
-        <div id="table"><h4>COLLEGE INFORMATION</h4>
+        <h4>COLLEGE INFORMATION</h4>
         </br>
-        <table><tbody>
+        <table id="table"><tbody>
 
         <tr><td><label for="college">Name of the College &#42;</label></td>
         <td><input required pattern="[a-zA-Z\s]+" type="text" maxlength="40" size="60" name="college" id="college"></td></tr>
@@ -29,10 +29,10 @@
             <option value="Division III">Division III</option>
         </select></td></tr>
         <tr><td><label for="type">College Type &#42;</label></td>
-        <td><label><input required type="radio" name="type" id="type" value="Public">  Public</label>
+        <td class="type"><label><input required type="radio" name="type" id="type" value="Public">  Public</label>
             <label><input required type="radio" name="type" id="type" value="Private">  Private</label>
         </td></tr>
-        </tbody></table></div>
+        </tbody></table>
 
         <h3 class="sportslabel">SPORTS</h3>
         <ul id='sports'>

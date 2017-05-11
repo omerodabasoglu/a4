@@ -32,8 +32,8 @@
         </select></td></tr>
 
         <tr><td><label for="type">College Type &#42;</label></td>
-        <td><span id="radioButtons"><label><input required type="radio" name="type" id="type" value="Public">  Public</label>
-            <label><input required type="radio" name="type" id="type" value="Private">  Private</label></span>
+        <td class="type"><label><input required type="radio" name="type" id="type" value="Public">&#160;Public</label>
+            <label><input required type="radio" name="type" id="type" value="Private">&#160;Private</label>
         </td></tr>
         </tbody></table></div>
         <p class="sportslabel">Sports</p>

@@ -18,7 +18,7 @@ Route::get('/print', 'FormController@print');
 #--------------------------------------------------------------#
 # Restricted routes for guests                                 #
 #--------------------------------------------------------------#
-Route::group(['middleware' => 'auth'], function() { 
+Route::group(['middleware' => 'auth'], function() {
 
     # Get route to show a form to create a add a new institution
     Route::get('/sports', 'FormController@addNewInstitution');
@@ -60,22 +60,18 @@ Auth::routes();
 
 Route::get('/home', 'FormController@index');
 
-Route::get('/logout', function() {
-    Auth::logout();
-    dump("You've been logged out");
-});
+if(config('app.env') == 'local') {
+    #temporary route to check login session_status
+    Route::get('/show-login-status', function() {
 
+        # You may access the authenticated user via the Auth facade
+        $user = Auth::user();
 
-#temporary route to check login session_status
-Route::get('/show-login-status', function() {
+        if($user)
+            dump('You are logged in.', $user->toArray());
+        else
+            dump('You are not logged in.');
 
-    # You may access the authenticated user via the Auth facade
-    $user = Auth::user();
-
-    if($user)
-        dump('You are logged in.', $user->toArray());
-    else
-        dump('You are not logged in.');
-
-    return;
-});
+        return;
+    });
+}

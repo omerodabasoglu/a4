@@ -24,6 +24,23 @@ header {
     color: #f1f2f2;
     font-family: 'Gloria Hallelujah';
 }
+#navbar ul li a.logout {
+    color: #f1f2f2;
+    background-color: rgba(235,90,91,0.9);
+    font-weight: bold;
+    padding: 4px;
+    text-shadow: 1px 1px 2px #000000;
+    text-decoration: none;
+}
+
+#navbar ul li a.logout:hover {
+    color: #f1f2f2;
+    background-color: black;
+    font-weight: bold;
+    padding: 4px;
+    text-shadow: 1px 1px 2px #000000;
+    text-decoration: none;
+}
 
 #navbar {
     padding: 150px 33% 0 38%;
@@ -40,11 +57,19 @@ header {
 table {
     margin-left: auto;
     margin-right: auto;
+    background-color: rgba(241,242,242,0.7);
 }
 
-#radioButtons {
+td #level {
+    float: left;
     text-align: left;
 }
+
+td.type {
+    float: left;
+    text-align: left;
+}
+
 td {
     padding: 5px;
     font-size: 1.1em;
@@ -61,7 +86,7 @@ th {
 }
 
 #table {
-    background-color: rgba(241,242,242,0.3);
+    background-color: rgba(241,242,242,0.7);
 }
 
 #logoNote {
@@ -81,7 +106,7 @@ th {
     padding: 2px;
     background-color: rgba(241,242,242,0.7);
     list-style-type: none;
-    padding: 0;
+    padding: 5px;
     margin: 0;
 }
 
@@ -162,6 +187,16 @@ form {
 }
 
 input[type="submit"] {
+    background-color: #f1f2f2;
+    color: #414042;
+    margin: auto;
+    display: block;
+    width: 20%;
+    font-size: 1.5em;
+    padding: 10px 0px;
+}
+
+button #login {
     background-color: #f1f2f2;
     color: #414042;
     margin: auto;

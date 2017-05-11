@@ -28,15 +28,15 @@
                     <li class="{{ Request::is('sports') ? "active" : '' }}"><a class="{{ Request::is('sports') ? "current" : '' }}" href="./sports" data-toggle="tab" aria-expanded="true">ADD A NEW COLLEGE</a></li>
                     <li class="{{ Request::is('print') ? "active" : '' }}"><a class="{{ Request::is('print') ? "current" : '' }}" href="./print" data-toggle="tab" aria-expanded="true">PRINT LIST</a></li>
                     <li>
-                        <form method='POST' id='logout' action='./logout'>
+                        <form method='POST' action='./logout'>
                             {{csrf_field()}}
-                            <a href='#' onClick='document.getElementById("logout").submit();'>Logout</a>
+                            <a class='logout' href='#' onClick='document.getElementById("logout").submit();'>LOGOUT</a>
                         </form>
                     </li>
                 @else
                 <li class="{{ Request::is('/') ? "active" : '' }}"><a class="{{ Request::is('/') ? "current" : '' }}" href="./" data-toggle="tab" aria-expanded="true">Home</a></li>
-                <li class="{{ Request::is('sports') ? "active" : '' }}"><a class="{{ Request::is('sports') ? "current" : '' }}" href="./login" data-toggle="tab" aria-expanded="true">LOGIN</a></li>
-                <li class="{{ Request::is('print') ? "active" : '' }}"><a class="{{ Request::is('print') ? "current" : '' }}" href="./register" data-toggle="tab" aria-expanded="true">REGISTER</a></li>
+                <li class="{{ Request::is('login') ? "active" : '' }}"><a class="{{ Request::is('sports') ? "current" : '' }}" href="./login" data-toggle="tab" aria-expanded="true">LOGIN</a></li>
+                <li class="{{ Request::is('register') ? "active" : '' }}"><a class="{{ Request::is('print') ? "current" : '' }}" href="./register" data-toggle="tab" aria-expanded="true">REGISTER</a></li>
                 @endif
             </ul>
     </div>

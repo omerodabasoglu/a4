@@ -9,7 +9,7 @@
 <div class="container">
   <div class="row justify-content-md-center">
     <div class="col-12 col-md-auto">
-    <table class="table table-striped table-hover col-6">
+    <table class="table table-hover col-6">
         <thead>
             <tr>
                 <th id="cellId">ID</th>

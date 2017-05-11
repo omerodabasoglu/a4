@@ -35,6 +35,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     Send Password Reset Link
                                 </button>
+                                <p><em>Currently, email service is not active, we apologize for any inconvenience...</em></p>
                             </div>
                         </div>
                     </form>
