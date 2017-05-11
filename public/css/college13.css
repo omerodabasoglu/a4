@@ -24,7 +24,7 @@ header {
     color: #f1f2f2;
     font-family: 'Gloria Hallelujah';
 }
-#navbar ul li a.logout {
+#navbar ul li a.logoutButton {
     color: #f1f2f2;
     background-color: rgba(235,90,91,0.9);
     font-weight: bold;
@@ -187,16 +187,6 @@ form {
 }
 
 input[type="submit"] {
-    background-color: #f1f2f2;
-    color: #414042;
-    margin: auto;
-    display: block;
-    width: 20%;
-    font-size: 1.5em;
-    padding: 10px 0px;
-}
-
-button #login {
     background-color: #f1f2f2;
     color: #414042;
     margin: auto;

@@ -28,9 +28,9 @@
                     <li class="{{ Request::is('sports') ? "active" : '' }}"><a class="{{ Request::is('sports') ? "current" : '' }}" href="./sports" data-toggle="tab" aria-expanded="true">ADD A NEW COLLEGE</a></li>
                     <li class="{{ Request::is('print') ? "active" : '' }}"><a class="{{ Request::is('print') ? "current" : '' }}" href="./print" data-toggle="tab" aria-expanded="true">PRINT LIST</a></li>
                     <li>
-                        <form method='POST' action='./logout'>
+                        <form method='POST' id="logout "action='./logout'>
                             {{csrf_field()}}
-                            <a class='logout' href='#' onClick='document.getElementById("logout").submit();'>LOGOUT</a>
+                            <a class="logoutButton" href='#' onClick='document.getElementById("logout").submit();'>Logout</a>
                         </form>
                     </li>
                 @else

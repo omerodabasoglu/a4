@@ -204,7 +204,7 @@ public function print(Request $request) {
          $institution->sports()->detach();
          $institution->delete();
          # Finish
-         Session::flash('message', $institution->college.' was deleted.');
+         Session::flash('message', $institution->college.' has been deleted.');
          return redirect('/');
      }
   }
