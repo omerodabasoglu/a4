@@ -9,14 +9,14 @@
     <h4>{{ $institution->college }}</h4>
 
     <a href='/sports/{{ $institution->id }}'><img class='Logo' src='{{ $institution->logo }}' height="150" alt='{{ $institution->college }} logo'></a>
-    </br>
-    <p id="showInfo">
+    <br>
+    <p class="showInfo">
 
     * Level: {{ $institution->level }} *&#160;&#160;&#160;* Type: {{ $institution->type }} *</p>
 
-    <p id="showInfo">* Last updated: {{ $institution->updated_at }} *</p>
+    <p class"showInfo">* Last updated: {{ $institution->updated_at }} *</p>
 
-    <p id="showInfo"><strong>SPORTS: </strong>
+    <p class="showInfo"><strong>SPORTS: </strong>
       @foreach($institution->sports as $sport)
           {{ $sport->categories }},
       @endforeach

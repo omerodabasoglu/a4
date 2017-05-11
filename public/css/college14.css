@@ -1,3 +1,7 @@
+/*------------------------------------------*
+/* Main                                     *
+/*------------------------------------------*/
+
 body {
   margin: auto;
   background-image: url(stadxxx.jpg);
@@ -22,6 +26,30 @@ header {
     color: #f1f2f2;
     font-family: 'Gloria Hallelujah';
 }
+
+p, h2 { text-align: center; padding: 10px; }
+
+h4 {
+    text-align: center;
+    padding-top: 25px;
+    font-size: 2em;
+    color: #eb5a5b;
+}
+
+#homepage {
+    width: 50%;
+    margin: auto;
+    font-size: 1.1em;
+    text-align: justify;
+    margin-top: 10px;
+}
+
+form { width: 70%; margin: auto; }
+
+/*------------------------------------------*
+/* Navigation related                       *
+/*------------------------------------------*/
+
 #navbar ul li a.logoutButton {
     color: #f1f2f2;
     background-color: rgba(235,90,91,0.9);
@@ -40,17 +68,15 @@ header {
     text-decoration: none;
 }
 
-#navbar {
-    padding: 150px 33% 0 38%;
- }
+#navbar { padding: 150px 33% 0 38%; }
 
-#navbar ul li a.current {
-    background-color: #f1f2f2;
-}
+#navbar ul li a.current { background-color: #f1f2f2; }
 
-#navbar ul li a {
-    color: black;
-}
+#navbar ul li a { color: black; }
+
+/*------------------------------------------*
+/* Table related                            *
+/*------------------------------------------*/
 
 table {
     margin-left: auto;
@@ -58,15 +84,9 @@ table {
     background-color: rgba(241,242,242,0.7);
 }
 
-td #level {
-    float: left;
-    text-align: left;
-}
+td #level { float: left; text-align: left; }
 
-td.type {
-    float: left;
-    text-align: left;
-}
+td.type { float: left; text-align: left; }
 
 td {
     padding: 5px;
@@ -75,22 +95,13 @@ td {
     text-align: center;
 }
 
-th {
-    text-align: center;
-}
+th { text-align: center; }
 
-#showInfo, #showIcons {
-    font-size: 2em;
-}
+.showInfo, #showIcons { font-size: 2em; }
 
-#table {
-    background-color: rgba(241,242,242,0.7);
-}
+#table { background-color: rgba(241,242,242,0.7); }
 
-#logoNote {
-    font-size: 0.7em;
-    color: #eb5a5b;
-}
+#logoNote { font-size: 0.7em; color: #eb5a5b; }
 
 .sportslabel {
     text-align: center;
@@ -114,53 +125,33 @@ th {
     margin-right: auto;
 }
 
-#cellId {
-  font-size: 1.5em;
-  width: 20px;
-}
+#cellId { font-size: 1.5em; width: 20px; }
 
-#cellIcons, #cellLogo {
-    width: 150px;
-}
+#cellIcons, #cellLogo { width: 150px; }
 
-#cellCollege {
-    font-size: 1.5em;
-    width: 200px;
-}
+#cellCollege { font-size: 1.5em; width: 200px; }
 
-#cellLevel, #cellType {
-    font-size: 1.5em;
-    width: 100px;
-}
+#cellLevel, #cellType { font-size: 1.5em; width: 100px; }
 
-#cellSports {
-    font-size: 1.5em;
-    width: 280px;
-}
+#cellSports { font-size: 1.5em; width: 280px; }
 
-p, h2 {
-    text-align: center;
-    padding: 10px;
-}
-
-h4 {
-    text-align: center;
-    padding-top: 25px;
-    font-size: 2em;
-    color: #eb5a5b;
-}
-#homepage {
-    width: 50%;
+input[type="submit"] {
+    background-color: #f1f2f2;
+    color: #414042;
     margin: auto;
-    font-size: 1.1em;
-    text-align: justify;
-    margin-top: 10px;
+    display: block;
+    width: 20%;
+    font-size: 1.5em;
+    padding: 10px 0px;
 }
 
-form {
-    width: 70%;
-    margin: auto;
-}
+input[type="submit"]:hover { background-color: #eb5a5b; }
+
+#deleteButton { width: 40%; margin-bottom: 20px; }
+
+/*------------------------------------------*
+/* Error related                            *
+/*------------------------------------------*/
 
 .message {
     width:100%;
@@ -173,9 +164,7 @@ form {
     background-color:yellow;
 }
 
-.error {
-    margin-top:10px;
-}
+.error { margin-top:10px; }
 
 .error ul {
     list-style-type: none;
@@ -183,24 +172,9 @@ form {
     padding:0;
 }
 
-input[type="submit"] {
-    background-color: #f1f2f2;
-    color: #414042;
-    margin: auto;
-    display: block;
-    width: 20%;
-    font-size: 1.5em;
-    padding: 10px 0px;
-}
-
-input[type="submit"]:hover {
-    background-color: #eb5a5b;
-}
-
-#deleteButton {
-    width: 40%;
-    margin-bottom: 20px;
-}
+/*------------------------------------------*
+/* Footer related                           *
+/*------------------------------------------*/
 
 footer {
     margin: auto;

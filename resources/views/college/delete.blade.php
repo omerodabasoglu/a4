@@ -11,10 +11,10 @@
 
         {{ csrf_field() }}
 
-        <input type='hidden' name='id' value='{{ $institution->id }}'?>
+        <input type='hidden' name='id' value='{{ $institution->id }}'>
 
         <h2>Are you sure you want to delete
-        </br>
+        <br>
         <em><strong>{{ $institution->college }}</strong></em>?</h2>
 
         <input id="deleteButton" type='submit' value='Yes, delete this college.' class='btn btn-danger'>

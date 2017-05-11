@@ -11,14 +11,14 @@
 
         <p> Please submit the sports offered at a college via this form.</p>
         <h4>COLLEGE INFORMATION</h4>
-        </br>
+        <br>
         <table id="table"><tbody>
 
         <tr><td><label for="college">Name of the College &#42;</label></td>
         <td><input required pattern="[a-zA-Z\s]+" type="text" maxlength="40" size="60" name="college" id="college"></td></tr>
 
         <tr><td><label for="logo">Link to College Logo &#42;</label></td>
-        <td><input required type="text" size="60" name="logo" id="logo"></br><span id="logoNote">Please check the url to
+        <td><input required type="text" size="60" name="logo" id="logo"><br><span id="logoNote">Please check the url to
           make sure it links to the college logo, otherwise this entry may not be added.</span></td></tr>
 
         <tr><td><label for="level">Level &#42;</label></td>
@@ -29,8 +29,8 @@
             <option value="Division III">Division III</option>
         </select></td></tr>
         <tr><td><label for="type">College Type &#42;</label></td>
-        <td class="type"><label><input required type="radio" name="type" id="type" value="Public">  Public</label>
-            <label><input required type="radio" name="type" id="type" value="Private">  Private</label>
+        <td class="type"><label><input required type="radio" name="type" id="public" value="Public">  Public</label>
+            <label><input required type="radio" name="type" id="private" value="Private">  Private</label>
         </td></tr>
         </tbody></table>
 

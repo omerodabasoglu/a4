@@ -25,7 +25,7 @@
 
                 <tr>
                     <td>{{ $institution->id }}</td>
-                    <td><img class="Logo" src="{{ $institution->logo }}" alt="{{ $institution->college }} logo" height="40"</td>
+                    <td><img class="Logo" src="{{ $institution->logo }}" alt="{{ $institution->college }} logo" height="40"></td>
                     <td>{{ $institution->college }}</td>
                     <td>{{ $institution->level }}</td>
                     <td>{{ $institution->type }}</td>

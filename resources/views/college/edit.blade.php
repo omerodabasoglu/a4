@@ -11,7 +11,7 @@
 
 
         <h4>EDIT COLLEGE INFORMATION</h4>
-        </br>
+        <br>
         <table id="table"><tbody>
 
         <tr><td><label for="college">Name of the College &#42;</label></td>
@@ -20,7 +20,7 @@
 
         <tr><td><label for="logo">Link to College Logo &#42;</label></td>
         <td><input required type="text" size="60" name="logo"
-              value="{{ old('logo', $institution->logo) }}" id="logo"></br><span id="logoNote">Please check the url to
+              value="{{ old('logo', $institution->logo) }}" id="logo"><br><span id="logoNote">Please check the url to
                 make sure it links to the college logo, otherwise this entry may not be added.</span></td></tr>
 
         <tr><td><label for="level">Level &#42;</label></td>
@@ -35,7 +35,7 @@
         <td class="type"><label><input required type="radio" name="type" id="type" value="Public">&#160;Public</label>
             <label><input required type="radio" name="type" id="type" value="Private">&#160;Private</label>
         </td></tr>
-        </tbody></table></div>
+        </tbody></table>
         <p class="sportslabel">Sports</p>
             <ul id='sports'>
                 @foreach($sportsForCheckboxes as $id => $name)
@@ -47,7 +47,7 @@
                     >
                     {{ $name }} <br></li>
                 @endforeach
-            </ul></br>
+            </ul><br>
         <div class="form-group">
             <input type='submit' class="btn btn-primary" id="submit" value="Save">
         </div>
